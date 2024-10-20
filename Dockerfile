@@ -4,9 +4,6 @@ WORKDIR /home/node/app
 #RUN addgroup app && adduser -S -G app app && chown -R app /app
 #USER app
 COPY package*.json ./
-USER node
-RUN npm install
-#RUN chown -R node /usr/src/app/node_modules
-COPY --chown=node:node . .
+COPY index.js /home/node/app/
 EXPOSE 3030
 CMD = ["node", "/home/node/app/index.js"]
