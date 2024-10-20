@@ -30,4 +30,4 @@ jobs:
                   context: .
                   file: ./Dockerfile
                   push: true
-                  tags: $/github_cicd:latest
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/github_cicd:latest
