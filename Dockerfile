@@ -9,4 +9,4 @@ RUN npm install
 #RUN chown -R node /usr/src/app/node_modules
 COPY --chown=node:node . .
 EXPOSE 3030
-CMD = ["node", "index.js"]
+CMD = ["node", "/home/node/app/index.js"]
