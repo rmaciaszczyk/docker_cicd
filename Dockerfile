@@ -7,4 +7,4 @@ COPY package.json ./
 RUN npm install
 COPY . .
 EXPOSE 3030
-CMD = ["node", "/home/node/app/index.js"]
+CMD = ["node", "index.js"]
