@@ -1,7 +1,9 @@
 FROM node:latest
-WORKDIR /usr/src/app
-ADD package*.json ./
+WORKDIR /app
+RUN addgroup app && adduser -S -G app app && chown -R app /app
+USER app
+COPY package*.json ./
 RUN npm install
-COPY . .
+COPY . ./
 EXPOSE 4000
 CMD = ["npm","run", "start"]
