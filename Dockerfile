@@ -4,6 +4,6 @@ WORKDIR /app
 #USER app
 COPY package*.json index.js ./
 RUN npm install
-COPY . ./
+COPY . .
 EXPOSE 3030
 CMD = ["node", "index.js"]
