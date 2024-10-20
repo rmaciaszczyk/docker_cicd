@@ -1,10 +1,17 @@
 FROM node:latest
-#RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-WORKDIR /home/node/app
-#RUN addgroup app && adduser -S -G app app && chown -R app /app
-#USER app
-COPY package.json ./
+
+# Set the working directory to a more standard location
+WORKDIR /usr/src/app
+
+# Copy and install dependencies
+COPY package*.json ./
 RUN npm install
+
+# Copy the rest of your application
 COPY . .
+
+# Expose the port your application will listen on
 EXPOSE 3030
-CMD = ["node", "/home/node/app/index.js"]
+
+# Start your application
+CMD ["node", "index.js"]
